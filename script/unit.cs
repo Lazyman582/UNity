@@ -9,10 +9,11 @@ public class unit : MonoBehaviour
 
     private moveaction moveaction;
     private girdpostion girdpostion;
-    
+    public BideAction bideAction;
 
     void Start()
     {
+        bideAction = GetComponent<BideAction>();
         moveaction = GetComponent<moveaction>();
         girdpostion = LiveSystem.Instence.GetGirdpostion(transform.position);///获取游戏物体位置
         LiveSystem.Instence.Addunitgirdpostion(girdpostion,this);///将游戏物体位置转换为单格上的一个单元
@@ -34,6 +35,10 @@ public class unit : MonoBehaviour
         return moveaction; }
 
 
+    public BideAction GetBideAction() { 
+    
+    return bideAction;
+    }
     public girdpostion GetGirdpostion() { 
     
     
